@@ -1,0 +1,42 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: #0f172a; color: #e2e8f0; }
+
+.topbar {
+  text-align: center; padding: 24px;
+  background: linear-gradient(135deg, #1e293b, #0f766e);
+}
+.topbar h1 { font-size: 2rem; }
+.topbar p { color: #94a3b8; margin-top: 6px; }
+
+main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+
+.controls { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+.card {
+  background: #1e293b; border-radius: 14px; padding: 20px;
+  flex: 1; min-width: 260px; box-shadow: 0 4px 20px rgba(0,0,0,.3);
+}
+.card h3 { margin-bottom: 14px; color: #5eead4; }
+
+.btn {
+  display: inline-block; cursor: pointer; margin: 6px 6px 0 0;
+  padding: 10px 16px; border: none; border-radius: 8px;
+  background: #0d9488; color: white; font-size: .95rem;
+  transition: .2s;
+}
+.btn:hover { background: #14b8a6; transform: translateY(-2px); }
+.btn.stop { background: #be123c; }
+
+.alert {
+  margin-top: 12px; padding: 12px; border-radius: 8px;
+  background: #dc2626; font-weight: bold; text-align: center;
+  animation: blink 1s infinite;
+}
+@keyframes blink { 50% { opacity: .4; } }
+.hidden { display: none; }
+
+.canvas-wrap { display: flex; justify-content: center; }
+canvas {
+  max-width: 100%; border-radius: 14px;
+  background: #020617; box-shadow: 0 4px 30px rgba(0,0,0,.5);
+}
+footer { text-align: center; padding: 20px; color: #64748b; }
