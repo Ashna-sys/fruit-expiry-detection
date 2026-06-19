@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreshGuard AI — Fruit Freshness Detector</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- ONNX Runtime Web -->
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>🍎 FreshGuard AI</h1>
+    <p>Real-time Fruit Freshness & Expiry Detection</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="card">
+        <h3>Input Source</h3>
+        <label class="btn">📷 Image
+          <input type="file" id="imageInput" accept="image/*" hidden />
+        </label>
+        <label class="btn">🎞️ Video
+          <input type="file" id="videoInput" accept="video/*" hidden />
+        </label>
+        <button class="btn" id="webcamBtn">🎥 Webcam</button>
+        <button class="btn stop" id="stopBtn">⏹ Stop</button>
+      </div>
+
+      <div class="card status">
+        <h3>Status</h3>
+        <p id="statusText">Loading model…</p>
+        <div id="alertBox" class="alert hidden">⚠️ EXPIRED FRUIT DETECTED!</div>
+      </div>
+    </section>
+
+    <section class="viewer">
+      <div class="canvas-wrap">
+        <video id="video" autoplay muted playsinline hidden></video>
+        <canvas id="canvas"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <audio id="alarm" src="alarm.mp3" loop></audio>
+  <footer>Powered by YOLOv8 + ONNX Runtime Web</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
